@@ -35,15 +35,15 @@ Each service runs independently and communicates through HTTP requests, ensuring
 
 3. Run each Flask service (open three terminals)
 
-    # Terminal 1
+    i. Terminal 1
     cd eta_service
     python app.py
 
-    # Terminal 2
+    ii. Terminal 2
     cd ../route_service
     python app.py
 
-    # Terminal 3
+    iii. Terminal 3
     cd ../frontend_service
     python app.py
 
