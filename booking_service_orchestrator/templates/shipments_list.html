@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4 text-center">All Shipments</h2>
+
+<table class="table table-bordered table-striped shadow">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Sender</th>
+            <th>Receiver</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Weight</th>
+            <th>ETA</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for s in shipments %}
+        <tr>
+            <td>{{ s[0] }}</td>
+            <td>{{ s[1] }}</td>
+            <td>{{ s[2] }}</td>
+            <td>{{ s[3] }}</td>
+            <td>{{ s[4] }}</td>
+            <td>{{ s[5] }}</td>
+            <td>{{ s[6] }}</td>
+            <td>
+                <a href="/edit/{{ s[0] }}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="/delete/{{ s[0] }}" class="btn btn-sm btn-danger" onclick="return confirm('Delete this record?')">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

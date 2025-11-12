@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4" style="max-width: 450px; margin: auto;">
+    <h3 class="text-center mb-3">Create Account</h3>
+
+    <form method="POST">
+        <label class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" required>
+
+        <label class="form-label mt-3">Email</label>
+        <input type="email" name="email" class="form-control" required>
+
+        <label class="form-label mt-3">Password</label>
+        <input type="password" name="password" class="form-control" required>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-success px-4" type="submit">Sign Up</button>
+        </div>
+
+        <p class="text-center mt-3">
+            Already have an account? <a href="/login">Login</a>
+        </p>
+    </form>
+</div>
+{% endblock %}

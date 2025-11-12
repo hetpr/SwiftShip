@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4">
+    <h3 class="mb-3">ETA Delivery History</h3>
+
+    <a href="/admin/eta-history/add" class="btn btn-primary mb-3">Add New Record</a>
+
+    <table class="table table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Distance (km)</th>
+                <th>Actual Days</th>
+                <th>Priority</th>
+                <th>Notes</th>
+                <th>Created</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for h in history %}
+            <tr>
+                <td>{{ h.id }}</td>
+                <td>{{ h.distance_km }}</td>
+                <td>{{ h.actual_days }}</td>
+                <td>{{ h.priority|capitalize }}</td>
+                <td>{{ h.notes }}</td>
+                <td>{{ h.created_at }}</td>
+                <td><a href="/admin/eta-history/delete/{{ h.id }}" class="btn btn-danger btn-sm">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

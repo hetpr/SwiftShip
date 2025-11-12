@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4 text-center">
+    <h2 class="text-success mb-3">Shipment Booked Successfully!</h2>
+
+    <p><strong>Sender:</strong> {{ sender }}</p>
+    <p><strong>Receiver:</strong> {{ receiver }}</p>
+    <p><strong>From:</strong> {{ source }} → <strong>To:</strong> {{ destination }}</p>
+    <p><strong>Weight:</strong> {{ weight }} kg</p>
+    <p><strong>Estimated Delivery Date:</strong> <span class="text-primary">{{ eta }}</span></p>
+    <p><strong>Service Priority:</strong> {{ priority|capitalize }}</p>
+    <p><strong>Optimal Delivery Route:</strong></p>
+    <p class="text-dark fw-semibold">{{ route }}</p>
+
+    {% if distance %}
+    <p><strong>Total Distance:</strong> {{ distance }} km</p>
+    {% endif %}
+</div>
+{% endblock %}

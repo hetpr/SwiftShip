@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4">
+    <h2 class="text-center mb-4">Shipment Booking</h2>
+
+    <form action="/book" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Sender Name</label>
+            <input type="text" name="sender" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Receiver Name</label>
+            <input type="text" name="receiver" class="form-control" required>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Source</label>
+                <input type="text" name="source" class="form-control" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Destination</label>
+                <input type="text" name="destination" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Weight (kg)</label>
+            <input type="number" step="0.1" name="weight" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Service Priority</label>
+            <select name="priority" class="form-select" required>
+                <option value="standard">Standard (Economy)</option>
+                <option value="express">Express (Fast)</option>
+                <option value="overnight">Overnight (Premium)</option>
+            </select>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary px-5" type="submit">Book Shipment</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

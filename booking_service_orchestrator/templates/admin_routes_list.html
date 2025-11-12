@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow p-4">
+    <h3 class="mb-3">Route Network</h3>
+
+    <a href="/admin/routes/add" class="btn btn-primary mb-3">Add New Route</a>
+
+    <table class="table table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Distance (km)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r in routes %}
+            <tr>
+                <td>{{ r.id }}</td>
+                <td>{{ r.source }}</td>
+                <td>{{ r.destination }}</td>
+                <td>{{ r.distance_km }}</td>
+                <td>
+                    <a href="/admin/routes/edit/{{ r.id }}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/admin/routes/delete/{{ r.id }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
