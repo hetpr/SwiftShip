@@ -29,24 +29,11 @@ Each service runs independently and communicates through HTTP requests, ensuring
     git clone https://github.com/<your-username>/SwiftShip.git
     cd SwiftShip
 
-2. Create a virtual environment
-
-    python -m venv venv
-
-    # macOS / Linux
-    source venv/bin/activate
-
-    # Windows (PowerShell)
-    # .\venv\Scripts\Activate.ps1
-
-    # Windows (cmd)
-    # venv\Scripts\activate
-
-3. Install dependencies
+2. Install dependencies
 
     pip install -r requirements.txt
 
-4. Run each Flask service (open three terminals)
+3. Run each Flask service (open three terminals)
 
     # Terminal 1
     cd eta_service
@@ -60,7 +47,7 @@ Each service runs independently and communicates through HTTP requests, ensuring
     cd ../frontend_service
     python app.py
 
-5. Open the app in your browser:
+4. Open the app in your browser:
 
     http://localhost:5000
 
